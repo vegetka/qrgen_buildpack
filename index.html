@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<title>Sensipass QR POC</title>
+
+<style>
+	body {
+		width: 100%;
+		height: 100%;
+	}
+
+	#countDown {
+		position: absolute;
+		margin-top: 6%;
+	}
+
+	#header {
+		width: 100%;
+		height: 40px;
+		padding: 0;
+		box-shadow: 0px 0px 28px #8E8E8E;
+		border-bottom: 1px solid rgba(142, 142, 142, 0.58);
+
+	}
+	
+	h1 {
+		font-weight: bold;
+		font-size: 60px;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+</style>
+
+</head>
+
+<body>
+
+<div div='header'>
+	<img style="left: 30px" src="http://sensipass.com/img/logo1.png"></img>
+</div>
+
+<img style="width: 500px; height: 500px; margin-left:32%; margin-top: 10%;  position:absolute;" src="http://localhost:3000/" />
+
+<div id='countDown'></div>
+
+
+</body>
+
+<script type='text/javascript'>
+	function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        seconds = parseInt(timer % 10, 10);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+	document.getElementById("countDown").innerHTML = '<h1>' + seconds + '</h1>';
+
+        if (--timer < 0) {
+            timer = duration;
+            // location.reload();
+            window.location = './qrcode/index.html';
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var sixtySeconds = 10,
+        display = document.getElementById('countDown');
+    startTimer(sixtySeconds, display);
+};
+</script>
+
+
+</html>

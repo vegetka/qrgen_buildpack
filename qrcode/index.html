@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Sensipass QR POC</title>
+        <script type="text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+
+        <script type="text/javascript" src="js/lib/jsqrcode/grid.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/version.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/detector.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/formatinf.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/errorlevel.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/bitmat.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/datablock.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/bmparser.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/datamask.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/rsdecoder.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/gf256poly.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/gf256.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/decoder.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/QRCode.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/findpat.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/alignpat.js"></script>
+        <script type="text/javascript" src="js/lib/jsqrcode/databr.js"></script>
+
+        <script type="text/javascript" src="js/qr.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript" src="js/init.js"></script>
+
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+            }
+
+            #countDown {
+                position: absolute;
+                margin-top: 6%;
+            }
+
+            #header {
+                width: 100%;
+                height: 40px;
+                padding: 0;
+                box-shadow: 0px 0px 28px #8E8E8E;
+                border-bottom: 1px solid rgba(142, 142, 142, 0.58);
+
+            }
+            
+            h1 {
+                font-weight: bold;
+                font-size: 60px;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div div='header'>
+            <img style="left: 30px" src="http://sensipass.com/img/logo1.png"></img>
+        </div>
+        <video  id="camsource" autoplay style="position:absolute; margin-left: 33%;" width="320" height="240">No Web Cam Attached</video>
+        <canvas id="qr-canvas" width="320" height="240" style="position:absolute; margin-left: 33%; display:none"></canvas>
+        <h3 id="qr-value"></h3>
+        <h3 style="position:absolute; text-align: center; margin-left: 23%; margin-top: 13%" id="qr-code-value"></h3>
+
+        <img id="xGif" src="https://media.giphy.com/media/86VaJS7Y6tEzK/giphy.gif" style="display:none;position:absolute; margin-left: 16.5%; margin-top: 15%"></img>
+        <img id="tickGif" src="https://lawtrades.com/static/larry/img/checkmark.gif" style="display:none;position:absolute; margin-left: 16.5%; margin-top: 15%"></img>
+    </body>
+</html>

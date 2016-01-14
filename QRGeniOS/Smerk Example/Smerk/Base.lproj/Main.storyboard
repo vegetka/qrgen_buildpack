@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D13b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tEk-X0-RGW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--SCAN QR-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SMKViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LBd-Xt-zqI"/>
+                        <viewControllerLayoutGuide type="bottom" id="NwE-dO-Inl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xGb-aL-pDG" customClass="GPUImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xGb-aL-pDG" firstAttribute="top" secondItem="LBd-Xt-zqI" secondAttribute="bottom" id="BlZ-pz-gUq"/>
+                            <constraint firstItem="NwE-dO-Inl" firstAttribute="top" secondItem="xGb-aL-pDG" secondAttribute="bottom" id="g7t-9z-fNm"/>
+                            <constraint firstItem="xGb-aL-pDG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jdb-Uv-3zX"/>
+                            <constraint firstAttribute="trailing" secondItem="xGb-aL-pDG" secondAttribute="trailing" id="uYl-jc-jfi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SCAN QR" id="wMH-R6-t7g"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cameraView" destination="xGb-aL-pDG" id="kup-fn-5mG"/>
+                        <segue destination="wZ0-hb-pDU" kind="push" identifier="ShowQR" id="VMf-wM-IrM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-590.5" y="82.5"/>
+        </scene>
+        <!--UNIQUE QR-->
+        <scene sceneID="ZjN-Fo-1qI">
+            <objects>
+                <viewController storyboardIdentifier="QRView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wZ0-hb-pDU" customClass="QRViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RjP-jR-i3U"/>
+                        <viewControllerLayoutGuide type="bottom" id="eWH-DR-hn4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="42q-RM-lUr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwv-p8-9fd">
+                                <rect key="frame" x="67" y="214" width="240" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UNIQUE QR" id="c44-7y-qRM"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cameraView" destination="hwv-p8-9fd" id="ZaS-1P-iQQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WjW-Da-ktN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.5" y="82.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rFZ-ft-bCU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tEk-X0-RGW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="flc-g7-6y3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bWj-AQ-mHc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydp-Py-hLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1123" y="82"/>
+        </scene>
+    </scenes>
+</document>
